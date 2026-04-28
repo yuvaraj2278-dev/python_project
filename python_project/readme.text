@@ -1,0 +1,48 @@
+# 🛒 Shopper AI Dashboard
+
+Shopper AI Dashboard is a full-stack machine learning web application that predicts whether an online visitor is likely to make a purchase based on shopping behavior data.
+
+The system combines:
+- Machine Learning prediction
+- FastAPI backend
+- Firebase Authentication
+- Interactive dashboard UI
+- Real-time analytics graphs
+
+---
+
+# 🚀 Features
+
+## 🔐 Authentication
+- Firebase Login / Signup
+- Secure user session management
+
+## 🤖 Purchase Prediction
+- Predicts if a visitor will purchase or not
+- Uses trained Random Forest model
+
+## 📊 Analytics Dashboard
+- Bar Chart visualization
+- Pie Chart visualization
+- Real-time prediction insights
+
+## 🎨 Modern Dashboard UI
+- Sidebar navigation
+- Home page
+- Predict page
+- Graph page
+- Responsive design
+
+---
+
+# 🧠 Technologies Used
+
+### Frontend:
+- HTML5
+- CSS3
+- JavaScript
+- Chart
+
+
+
+uvicorn main:app --reload

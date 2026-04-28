@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopper AI Dashboard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<!-- =========================
+     LEFT SIDEBAR NAVIGATION
+========================= -->
+<div class="sidebar">
+    <h2 class="logo">🛒 Shopper AI</h2>
+
+    <button onclick="showPage('welcome')">🏠 Home</button>
+    <button onclick="showPage('predict')">🔮 Predict</button>
+    <button onclick="showPage('graph')">📊 Graphs</button>
+    <button onclick="logout()">🚪 Logout</button>
+</div>
+
+<!-- =========================
+     MAIN CONTENT AREA
+========================= -->
+<div class="main-content">
+
+    <!-- HOME PAGE -->
+    <div id="welcomePage" class="page active-page">
+
+        <div class="hero-card">
+            <h1 id="welcomeMsg">Welcome</h1>
+            <p class="hero-subtitle">
+                Predict customer purchase behavior intelligently using AI-powered analytics.
+            </p>
+
+            <div class="hero-grid">
+
+                <div class="feature-card">
+                    <h3>🤖 Smart Prediction</h3>
+                    <p>
+                        Analyze shopper intent instantly using machine learning prediction models.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>📊 Real-Time Analytics</h3>
+                    <p>
+                        Visualize predictions through interactive bar, pie, and line charts.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🔐 Secure Access</h3>
+                    <p>
+                        Protected with Firebase authentication for secure login and access.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- PREDICT PAGE -->
+    <div id="predictPage" class="page">
+
+        <div class="predict-card">
+            <h2>🔮 Prediction Panel</h2>
+
+            <input type="number" id="pageValues" placeholder="Enter Page Values">
+
+            <select id="month">
+                <option value="Nov">November</option>
+                <option value="Dec">December</option>
+                <option value="May">May</option>
+                <option value="Feb">February</option>
+            </select>
+
+            <select id="visitorType">
+                <option value="Returning_Visitor">Returning Visitor</option>
+                <option value="New_Visitor">New Visitor</option>
+            </select>
+
+            <select id="weekend">
+                <option value="false">Weekday</option>
+                <option value="true">Weekend</option>
+            </select>
+
+            <button onclick="getPrediction()">Predict</button>
+
+            <div id="result"></div>
+        </div>
+
+    </div>
+
+    <!-- GRAPH PAGE -->
+    <div id="graphPage" class="page">
+
+        <h2>📊 Graph Analysis</h2>
+
+        <div class="graph-container">
+            <canvas id="barChart"></canvas>
+            <canvas id="pieChart"></canvas>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</body>
+</html>

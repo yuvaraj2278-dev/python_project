@@ -1,0 +1,252 @@
+/* =========================================
+   🚀 MODERN TECH CLASSIC DASHBOARD UI
+   SCROLL FIX VERSION
+============================================ */
+
+/* BODY */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    height: 100vh;
+    overflow: hidden;   /* ❌ Prevent full page scroll */
+
+    display: flex;
+
+    background: linear-gradient(135deg, #0a0f1f, #111827, #1e293b);
+    background-size: 300% 300%;
+    animation: softGlow 15s ease infinite;
+}
+
+/* BACKGROUND ANIMATION */
+@keyframes softGlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* =========================
+   LEFT SIDEBAR
+========================= */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: rgba(17,24,39,0.95);
+    padding: 30px 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    border-right: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 4px 0 20px rgba(0,0,0,0.4);
+
+    overflow: hidden;
+}
+
+/* LOGO */
+.logo {
+    text-align: center;
+    color: #60a5fa;
+    margin-bottom: 30px;
+}
+
+/* SIDEBAR BUTTONS */
+.sidebar button {
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: #1f2937;
+    color: #e5e7eb;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sidebar button:hover {
+    background: #2563eb;
+    color: white;
+    transform: translateX(5px);
+    box-shadow: 0 0 12px rgba(37,99,235,0.4);
+}
+
+/* =========================
+   MAIN CONTENT AREA
+========================= */
+.main-content {
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto;     /* ✅ Only right side scrolls */
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* PAGE SYSTEM */
+.page {
+    display: none;
+    min-height: calc(100vh - 60px);
+}
+
+.active-page {
+    display: block;
+}
+
+/* =========================
+   HOME PAGE HERO
+========================= */
+.hero-card {
+    background: rgba(17,24,39,0.75);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(12px);
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.5),
+        0 0 30px rgba(59,130,246,0.05);
+    animation: fadeIn 0.8s ease;
+}
+
+/* Welcome Title */
+#welcomeMsg {
+    text-align: center;
+    font-size: 36px;
+    color: #93c5fd;
+    margin-bottom: 15px;
+}
+
+/* Subtitle */
+.hero-subtitle {
+    text-align: center;
+    color: #cbd5e1;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* Feature Grid */
+.hero-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* Feature Cards */
+.feature-card {
+    background: #1f2937;
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(59,130,246,0.2);
+}
+
+.feature-card h3 {
+    color: #60a5fa;
+}
+
+.feature-card p {
+    color: #cbd5e1;
+}
+
+/* =========================
+   PREDICT PAGE
+========================= */
+.predict-card {
+    max-width: 600px;
+    margin: auto;
+    background: rgba(17,24,39,0.75);
+    padding: 35px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.5),
+        0 0 30px rgba(59,130,246,0.05);
+}
+
+.predict-card h2 {
+    text-align: center;
+    color: #60a5fa;
+}
+
+/* Inputs */
+input, select {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background: #1f2937;
+    color: white;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Buttons */
+button {
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.03);
+}
+
+/* Result */
+#result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* =========================
+   GRAPH PAGE
+========================= */
+#graphPage h2 {
+    text-align: center;
+    color: #60a5fa;
+    margin-bottom: 30px;
+}
+
+.graph-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Graph Canvas */
+canvas {
+    width: 700px !important;
+    max-width: 100%;
+    height: 420px !important;
+    background: #0f172a;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow:
+        0 6px 20px rgba(0,0,0,0.4),
+        0 0 15px rgba(59,130,246,0.05);
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
